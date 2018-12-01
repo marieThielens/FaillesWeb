@@ -70,7 +70,16 @@ htmlspacialchars() . Cette fonction permet de filtrer les symboles du type  <, &
 - Le symbole " devient &quot;
 - Le symbole ' devient &#39;
 
-Modifions notre fichier connexion.php et 
+Modifions notre fichier connexion.php avec la protection
+
+```php
+
+  $pseudo = htmlspecialchars($_POST['pseudo'], ENT_QUOTES);
+  echo "Bonjour ".$pseudo." !"
+
+  ```
+
+  `ENT_QUOTES` : converti les simples et doubles guillemets. `"MonNom"` deviendra `&quot;MonNom&quot;`
 
 
 
